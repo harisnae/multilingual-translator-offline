@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ONNX Multilingual Translator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h2>ONNX Multilingual Translator</h2>
+
+<!-- Model selector -->
+<div class="row">
+  <label for="modelSelect">Model:</label>
+  <select id="modelSelect" class="flex">
+    <!-- ==== English → other languages (alphabetical) ==== -->
+    <option value="Xenova/opus-mt-en-af">opus‑mt‑en‑af (English → Afrikaans)</option>
+    <option value="Xenova/opus-mt-en-ar">opus‑mt‑en‑ar (English → Arabic)</option>
+    <option value="Xenova/opus-mt-en-zh">opus‑mt‑en‑zh (English → Chinese)</option>
+    <option value="Xenova/opus-mt-en-cs">opus‑mt‑en‑cs (English → Czech)</option>
+    <option value="Xenova/opus-mt-en-da">opus‑mt‑en‑da (English → Danish)</option>
+    <option value="Xenova/opus-mt-en-nl">opus‑mt‑en‑nl (English → Dutch)</option>
+    <option value="Xenova/opus-mt-en-fi">opus‑mt‑en‑fi (English → Finnish)</option>
+    <option value="Xenova/opus-mt-en-fr">opus‑mt‑en‑fr (English → French)</option>
+    <option value="Xenova/opus-mt-en-de" selected>opus‑mt‑en‑de (English → German)</option>
+    <option value="Xenova/opus-mt-en-hi">opus‑mt‑en‑hi (English → Hindi)</option>
+    <option value="Xenova/opus-mt-en-hu">opus‑mt‑en‑hu (English → Hungarian)</option>
+    <option value="Xenova/opus-mt-en-id">opus‑mt‑en‑id (English → Indonesian)</option>
+    <option value="Xenova/opus-mt-en-jap">opus‑mt‑en‑jap (English → Japanese)</option>
+    <option value="Xenova/opus-mt-en-mul">opus‑mt‑en‑mul (English → Multiple)</option>
+    <option value="Xenova/opus-mt-en-ro">opus‑mt‑en‑ro (English → Romanian)</option>
+    <option value="Xenova/opus-mt-en-ROMANCE">opus‑mt‑en‑ROMANCE (English → Romance languages)</option>
+    <option value="Xenova/opus-mt-en-ru">opus‑mt‑en‑ru (English → Russian)</option>
+    <option value="Xenova/opus-mt-en-sv">opus‑mt‑en‑sv (English → Swedish)</option>
+    <option value="Xenova/opus-mt-en-uk">opus‑mt‑en‑uk (English → Ukrainian)</option>
+    <option value="Xenova/opus-mt-en-vi">opus‑mt‑en‑vi (English → Vietnamese)</option>
+    <option value="Xenova/opus-mt-en-xh">opus‑mt‑en‑xh (English → Xhosa)</option>
+
+    <!-- ==== Other languages → English (alphabetical) ==== -->
+    <option value="Xenova/opus-mt-af-en">opus‑mt‑af‑en (Afrikaans → English)</option>
+    <option value="Xenova/opus-mt-ar-en">opus‑mt‑ar‑en (Arabic → English)</option>
+    <option value="Xenova/opus-mt-bat-en">opus‑mt‑bat‑en (Baltic → English)</option>
+    <option value="Xenova/opus-mt-zh-en">opus‑mt‑zh‑en (Chinese → English)</option>
+    <option value="Xenova/opus-mt-cs-en">opus‑mt‑cs‑en (Czech → English)</option>
+    <option value="Xenova/opus-mt-de-en">opus‑mt‑de‑en (German → English)</option>
+    <option value="Xenova/opus-mt-hi-en">opus‑mt‑hi‑en (Hindi → English)</option>
+    <option value="Xenova/opus-mt-id-en">opus‑mt‑id‑en (Indonesian → English)</option>
+    <option value="Xenova/opus-mt-it-en">opus‑mt‑it‑en (Italian → English)</option>
+    <option value="Xenova/opus-mt-ja-en">opus‑mt‑ja‑en (Japanese → English)</option>
+    <option value="Xenova/opus-mt-jap-en">opus‑mt‑jap‑en (Japanese → English)</option>
+    <option value="Xenova/opus-mt-ko-en">opus‑mt‑ko‑en (Korean → English)</option>
+    <option value="Xenova/opus-mt-no-de">opus‑mt‑no‑de (Norwegian → German)</option>
+    <option value="Xenova/opus-mt-nl-en">opus‑mt‑nl‑en (Dutch → English)</option>
+    <option value="Xenova/opus-mt-pl-en">opus‑mt‑pl‑en (Polish → English)</option>
+    <option value="Xenova/opus-mt-ru-en">opus‑mt‑ru‑en (Russian → English)</option>
+    <option value="Xenova/opus-mt-es-en">opus‑mt‑es‑en (Spanish → English)</option>
+    <option value="Xenova/opus-mt-sv-en">opus‑mt‑sv‑en (Swedish → English)</option>
+    <option value="Xenova/opus-mt-tc-big-tr-en">opus‑mt‑tc‑big‑tr‑en (TC Big TR → English)</option>
+    <option value="Xenova/opus-mt-tr-en">opus‑mt‑tr‑en (Turkish → English)</option>
+    <option value="Xenova/opus-mt-uk-en">opus‑mt‑uk‑en (Ukrainian → English)</option>
+    <option value="Xenova/opus-mt-xh-en">opus‑mt‑xh‑en (Xhosa → English)</option>
+  </select>
+  <button id="loadBtn">Load model</button>
+</div>
+
+<!-- Translate direction label -->
+<div class="row">
+  <span>Translate:</span>
+  <span id="directionLabel" class="direction"></span>
+</div>
+
+<!-- Status label (shows loading / inference messages) -->
+<div class="row">
+  <span>Status:</span>
+  <span id="status"></span>
+</div>
+
+<!-- Input textarea -->
+<label>Input text:</label>
+<textarea id="src" rows="4" placeholder="Enter text here…"></textarea>
+
+<!-- Translate / Clear buttons -->
+<div class="row">
+  <button id="translateBtn" disabled>Translate</button>
+  <button id="clearBtn">Clear</button>
+</div>
+
+<!-- Output textarea -->
+<label>Translation:</label>
+<textarea id="dst" rows="4" readonly></textarea>
+
+<!-- Center‑aligned Copy button -->
+<div class="center">
+  <button id="copyBtn">Copy</button>
+</div>
+
+
+</body>
+</html>
