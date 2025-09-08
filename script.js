@@ -61,7 +61,7 @@ const MODEL_DIRECTIONS = {
   "Xenova/opus-mt-tc-big-tr-en":"TC Big TR → English",
   "Xenova/opus-mt-tr-en":   "Turkish → English",
   "Xenova/opus-mt-uk-en":   "Ukrainian → English",
-  "Xenova/opus-mt-xh-en":   "Xhosa → English"
+  "Xenova/opus-mt-xh-en":   "Xhosa → English",
   // Other ↔ Other (non‑English)
   "Xenova/opus-mt-da-de":   "Danish → German",
   "Xenova/opus-mt-fi-de":   "Finnish → German",
