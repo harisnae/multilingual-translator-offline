@@ -17,7 +17,7 @@ let loadedModelId = null;  // currently loaded model identifier
 
 // ---------- Model → direction map ----------
 const MODEL_DIRECTIONS = {
-  // English → …
+  // English → Other
   "Xenova/opus-mt-en-af":   "English → Afrikaans",
   "Xenova/opus-mt-en-ar":   "English → Arabic",
   "Xenova/opus-mt-en-zh":   "English → Chinese",
@@ -39,7 +39,6 @@ const MODEL_DIRECTIONS = {
   "Xenova/opus-mt-en-uk":   "English → Ukrainian",
   "Xenova/opus-mt-en-vi":   "English → Vietnamese",
   "Xenova/opus-mt-en-xh":   "English → Xhosa",
-
   // Other → English
   "Xenova/opus-mt-af-en":   "Afrikaans → English",
   "Xenova/opus-mt-ar-en":   "Arabic → English",
@@ -63,6 +62,28 @@ const MODEL_DIRECTIONS = {
   "Xenova/opus-mt-tr-en":   "Turkish → English",
   "Xenova/opus-mt-uk-en":   "Ukrainian → English",
   "Xenova/opus-mt-xh-en":   "Xhosa → English"
+  // Other ↔ Other (non‑English)
+  "Xenova/opus-mt-da-de":   "Danish → German",
+  "Xenova/opus-mt-fi-de":   "Finnish → German",
+  "Xenova/opus-mt-fr-de":   "French → German",
+  "Xenova/opus-mt-de-fr":   "German → French",
+  "Xenova/opus-mt-fr-ro":   "French → Romanian",
+  "Xenova/opus-mt-ro-fr":   "Romanian → French",
+  "Xenova/opus-mt-fr-ru":   "French → Russian",
+  "Xenova/opus-mt-ru-fr":   "Russian → French",
+  "Xenova/opus-mt-fr-es":   "French → Spanish",
+  "Xenova/opus-mt-es-fr":   "Spanish → French",
+  "Xenova/opus-mt-de-es":   "German → Spanish",
+  "Xenova/opus-mt-es-de":   "Spanish → German",
+  "Xenova/opus-mt-gem-gem": "Germanic → Germanic",
+  "Xenova/opus-mt-gmw-gmw": "West Germanic → West Germanic",
+  "Xenova/opus-mt-it-fr":   "Italian → French",
+  "Xenova/opus-mt-it-es":   "Italian → Spanish",
+  "Xenova/opus-mt-es-it":   "Spanish → Italian",
+  "Xenova/opus-mt-no-de":   "Norwegian → German",
+  "Xenova/opus-mt-ru-uk":   "Russian → Ukrainian",
+  "Xenova/opus-mt-uk-ru":   "Ukrainian → Russian",
+  "Xenova/opus-mt-es-ru":   "Spanish → Russian"
 };
 
 // ---------- Helper ----------
