@@ -15,6 +15,7 @@
   <label for="modelSelect">Model:</label>
   <select id="modelSelect" class="flex">
     <!-- ==== English → other languages (alphabetical) ==== -->
+  <optgroup label="English → Other">
     <option value="Xenova/opus-mt-en-af">opus‑mt‑en‑af (English → Afrikaans)</option>
     <option value="Xenova/opus-mt-en-ar">opus‑mt‑en‑ar (English → Arabic)</option>
     <option value="Xenova/opus-mt-en-zh">opus‑mt‑en‑zh (English → Chinese)</option>
@@ -36,8 +37,10 @@
     <option value="Xenova/opus-mt-en-uk">opus‑mt‑en‑uk (English → Ukrainian)</option>
     <option value="Xenova/opus-mt-en-vi">opus‑mt‑en‑vi (English → Vietnamese)</option>
     <option value="Xenova/opus-mt-en-xh">opus‑mt‑en‑xh (English → Xhosa)</option>
+  </optgroup>
 
     <!-- ==== Other languages → English (alphabetical) ==== -->
+  <optgroup label="Other → English">
     <option value="Xenova/opus-mt-af-en">opus‑mt‑af‑en (Afrikaans → English)</option>
     <option value="Xenova/opus-mt-ar-en">opus‑mt‑ar‑en (Arabic → English)</option>
     <option value="Xenova/opus-mt-bat-en">opus‑mt‑bat‑en (Baltic → English)</option>
@@ -60,6 +63,32 @@
     <option value="Xenova/opus-mt-tr-en">opus‑mt‑tr‑en (Turkish → English)</option>
     <option value="Xenova/opus-mt-uk-en">opus‑mt‑uk‑en (Ukrainian → English)</option>
     <option value="Xenova/opus-mt-xh-en">opus‑mt‑xh‑en (Xhosa → English)</option>
+  </optgroup>
+    
+    <!-- ==== Other ↔ Other (non‑English) ==== -->
+  <optgroup label="Other → Other">
+    <option value="Xenova/opus-mt-da-de">opus‑mt‑da‑de (Danish → German)</option>
+    <option value="Xenova/opus-mt-fi-de">opus‑mt‑fi‑de (Finnish → German)</option>
+    <option value="Xenova/opus-mt-fr-de">opus‑mt‑fr‑de (French → German)</option>
+    <option value="Xenova/opus-mt-de-fr">opus‑mt‑de‑fr (German → French)</option>
+    <option value="Xenova/opus-mt-fr-ro">opus‑mt‑fr‑ro (French → Romanian)</option>
+    <option value="Xenova/opus-mt-ro-fr">opus‑mt‑ro‑fr (Romanian → French)</option>
+    <option value="Xenova/opus-mt-fr-ru">opus‑mt‑fr‑ru (French → Russian)</option>
+    <option value="Xenova/opus-mt-ru-fr">opus‑mt‑ru‑fr (Russian → French)</option>
+    <option value="Xenova/opus-mt-fr-es">opus‑mt‑fr‑es (French → Spanish)</option>
+    <option value="Xenova/opus-mt-es-fr">opus‑mt‑es‑fr (Spanish → French)</option>
+    <option value="Xenova/opus-mt-de-es">opus‑mt‑de‑es (German → Spanish)</option>
+    <option value="Xenova/opus-mt-es-de">opus‑mt‑es‑de (Spanish → German)</option>
+    <option value="Xenova/opus-mt-gem-gem">opus‑mt‑gem‑gem (Germanic → Germanic)</option>
+    <option value="Xenova/opus-mt-gmw-gmw">opus‑mt‑gmw‑gmw (West Germanic → West Germanic)</option>
+    <option value="Xenova/opus-mt-it-fr">opus‑mt‑it‑fr (Italian → French)</option>
+    <option value="Xenova/opus-mt-it-es">opus‑mt‑it‑es (Italian → Spanish)</option>
+    <option value="Xenova/opus-mt-es-it">opus‑mt‑es‑it (Spanish → Italian)</option>
+    <option value="Xenova/opus-mt-no-de">opus‑mt‑no‑de (Norwegian → German)</option>
+    <option value="Xenova/opus-mt-ru-uk">opus‑mt‑ru‑uk (Russian → Ukrainian)</option>
+    <option value="Xenova/opus-mt-uk-ru">opus‑mt‑uk‑ru (Ukrainian → Russian)</option>
+    <option value="Xenova/opus-mt-es-ru">opus‑mt‑es‑ru (Spanish → Russian)</option>
+ </optgroup> 
   </select>
   <button id="loadBtn">Load model</button>
 </div>
