@@ -36,7 +36,7 @@ Open the page, pick a model, click **Load model**, then translate. After the mod
 | Offline‑first – models are downloaded once, stored in IndexedDB and reused without network. |
 | Client‑side inference – no server, no API keys, no data leaves the user’s device. progress (percentage) is shown in the **Status** field. |
 | Copy / Clear UI – one‑click copy of the translation, clear button, responsive layout. |
-| 43 OPUS‑MT language pairs – English ↔ many languages, plus reverse directions. |
+| 58 OPUS‑MT language pairs – English ↔ many languages, plus reverse directions. |
 | Int8 quantised ONNX – ~4‑5× smaller files, fast inference in the browser. |
 | Static‑site friendly – can be served from any static host (GitHub Pages, Netlify, Cloudflare Pages). |
 | Responsive design – mobile‑first CSS, works on screens down to 320 px. |
